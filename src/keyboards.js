@@ -1,0 +1,52 @@
+const { Markup } = require('telegraf');
+const config = require('./config');
+
+function getMainKeyboard(messages) {
+  return Markup.inlineKeyboard([
+    [Markup.button.callback(messages.menu.demo, 'demo:start')],
+    [
+      Markup.button.callback(messages.menu.dashboard, 'section:dashboard'),
+      Markup.button.callback(messages.menu.clients, 'section:clients')
+    ],
+    [
+      Markup.button.callback(messages.menu.projects, 'section:projects'),
+      Markup.button.callback(messages.menu.analytics, 'section:analytics')
+    ],
+    [
+      Markup.button.callback(messages.menu.automation, 'section:automation'),
+      Markup.button.callback(messages.menu.pricing, 'section:pricing')
+    ],
+    [Markup.button.callback(messages.menu.contact, 'section:contact')],
+    [Markup.button.callback(messages.menu.language, 'language:toggle')]
+  ]);
+}
+
+function getBackKeyboard(messages) {
+  return Markup.inlineKeyboard([
+    [Markup.button.callback(messages.menu.back, 'main_menu')]
+  ]);
+}
+
+function getLanguageKeyboard() {
+  return Markup.inlineKeyboard([
+    [Markup.button.callback('English', 'language:en')],
+    [Markup.button.callback('Русский', 'language:ru')]
+  ]);
+}
+
+function getContactKeyboard(messages) {
+  const keyboard = [
+    [Markup.button.url(messages.menu.contact, config.CONTACT_TELEGRAM_URL)],
+    [Markup.button.url('WhatsApp', config.CONTACT_WHATSAPP_URL)],
+    [Markup.button.url('Landing page', config.LANDING_URL)]
+  ];
+
+  return Markup.inlineKeyboard(keyboard);
+}
+
+module.exports = {
+  getMainKeyboard,
+  getBackKeyboard,
+  getLanguageKeyboard,
+  getContactKeyboard
+};
