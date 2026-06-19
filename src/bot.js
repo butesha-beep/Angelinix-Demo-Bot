@@ -1,7 +1,14 @@
-const { Telegraf, session } = require('telegraf');
+const path = require('path');
+const { Telegraf, session, Input } = require('telegraf');
 const config = require('./config');
 const { getMainKeyboard, getContactKeyboard, getLanguageKeyboard, getBackKeyboard } = require('./keyboards');
 const { getDemoSteps } = require('./demo-flow');
+
+const demoScreenshots = {
+  dashboard: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-dashboard.jpg'),
+  clients: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-clients.jpg'),
+  analytics: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-analytics.jpg')
+};
 
 function getMessages(language = config.DEFAULT_LANGUAGE) {
   if (language === 'ru') {
@@ -52,9 +59,22 @@ async function runDemoFlow(ctx) {
 
   await ctx.reply(messages.demo.intro);
 
-  for (const step of steps) {
-    await ctx.reply(step);
-  }
+  await ctx.reply(steps[0]);
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dashboard), {
+    caption: messages.demo.screenshots.dashboard
+  });
+
+  await ctx.reply(steps[1]);
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.clients), {
+    caption: messages.demo.screenshots.clients
+  });
+
+  await ctx.reply(steps[2]);
+  await ctx.reply(steps[3]);
+  await ctx.reply(steps[4]);
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.analytics), {
+    caption: messages.demo.screenshots.analytics
+  });
 
   await ctx.reply(messages.demo.final, {
     ...getContactKeyboard(messages)

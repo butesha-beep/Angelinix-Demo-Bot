@@ -29,16 +29,16 @@ function getBackKeyboard(messages) {
 
 function getLanguageKeyboard() {
   return Markup.inlineKeyboard([
-    [Markup.button.callback('English', 'language:en')],
-    [Markup.button.callback('Русский', 'language:ru')]
+    [Markup.button.callback('🇺🇸 English', 'language:en')],
+    [Markup.button.callback('🇷🇺 Русский', 'language:ru')]
   ]);
 }
 
 function getContactKeyboard(messages) {
   const keyboard = [
-    [Markup.button.url(messages.menu.contact, config.CONTACT_TELEGRAM_URL)],
-    [Markup.button.url('WhatsApp', config.CONTACT_WHATSAPP_URL)],
-    [Markup.button.url('Landing page', config.LANDING_URL)]
+    [Markup.button.url(messages.contactButtons.telegram, config.CONTACT_TELEGRAM_URL)],
+    [Markup.button.url(messages.contactButtons.whatsapp, config.CONTACT_WHATSAPP_URL)],
+    [Markup.button.url(messages.contactButtons.landing, config.LANDING_URL)]
   ];
 
   return Markup.inlineKeyboard(keyboard);

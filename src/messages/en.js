@@ -1,81 +1,94 @@
 module.exports = {
   start: [
-    '<b>Angelinix Demo Bot</b>',
+    '<b>Angelinix Master</b>',
     '',
-    'This is a safe scripted preview of how an agency workflow can look in Telegram.',
-    'Choose a section below to explore the demo.'
+    'Your client pipeline, operations dashboard, and follow-up automation in one guided Telegram experience.',
+    '',
+    'This private preview shows how Angelinix turns new inquiries into organized projects with clear next steps, live status, and executive-ready summaries.',
+    '',
+    'Choose where you want to begin.'
   ].join('\n'),
   menu: {
-    demo: 'Start 2-Minute Demo',
-    dashboard: 'Dashboard Preview',
-    clients: 'Clients',
-    projects: 'Projects',
-    analytics: 'Analytics',
-    automation: 'Automation Flow',
-    pricing: 'Pricing / Packages',
-    contact: 'Contact Angelinix',
-    language: 'Language EN/RU',
-    back: '⬅ Back to Menu'
+    demo: '▶️ Start Preview',
+    dashboard: '📊 Dashboard',
+    clients: '👥 Clients',
+    projects: '🗂 Projects',
+    analytics: '📈 Analytics',
+    automation: '⚙️ Automation',
+    pricing: '💼 Packages',
+    contact: '📩 Book a Walkthrough',
+    language: '🌐 EN / RU',
+    back: '⬅️ Menu'
   },
   demo: {
-    intro: 'Here is a quick 2-minute walkthrough of the workflow:',
-    step1: 'Step 1: New lead arrives from the website inquiry form.',
-    step2: 'Step 2: The lead is added to the CRM with a sanitized demo profile.',
-    step3: 'Step 3: A project card is created with a sample timeline and owner.',
-    step4: 'Step 4: Automation status updates are sent to the team.',
-    step5: 'Step 5: Analytics summary appears with sample KPIs.',
-    final: 'Want this for your business? Contact Angelinix.'
+    intro: 'Here is the Angelinix Master preview flow:',
+    step1: '1. A new inquiry arrives and is ready for follow-up.',
+    step2: '2. The client profile is organized with the key context your team needs.',
+    step3: '3. A project workspace is prepared with ownership, status, and next steps.',
+    step4: '4. Automation keeps the team aligned with follow-ups, reminders, and status updates.',
+    step5: '5. Leadership gets a clear analytics snapshot without digging through separate tools.',
+    screenshots: {
+      dashboard: 'Dashboard view: pipeline health, active work, and priority signals in one place.',
+      clients: 'Client view: clean profiles, context, and relationship history for faster handoff.',
+      analytics: 'Analytics view: response, conversion, and delivery signals ready for decision-making.'
+    },
+    final: 'Ready to see this around your real workflow? Book a private Angelinix walkthrough.'
   },
   sections: {
     dashboard: [
-      'Dashboard Preview',
+      '<b>Dashboard</b>',
       '',
-      'Sample metrics:',
-      '- Leads: 24',
+      'A clear control room for the work that matters:',
+      '- New leads: 24',
       '- Conversion: 12.8%',
       '- Active projects: 7'
     ].join('\n'),
     clients: [
-      'Clients',
+      '<b>Clients</b>',
       '',
-      'Demo client list:',
+      'Client records stay organized, searchable, and ready for handoff:',
       '- Northline Retail',
       '- Studio Nova',
       '- Brightworks'
     ].join('\n'),
     projects: [
-      'Projects',
+      '<b>Projects</b>',
       '',
-      'Demo project summary:',
+      'Project work is grouped by outcome, owner, and next step:',
       '- Website redesign',
       '- Automation setup',
       '- Launch campaign'
     ].join('\n'),
     analytics: [
-      'Analytics',
+      '<b>Analytics</b>',
       '',
-      'Sample analytics snapshot:',
+      'Executive-ready signals without manual reporting:',
       '- Avg. response time: 18 min',
       '- Weekly reach: 1,240',
       '- Approval rate: 94%'
     ].join('\n'),
     automation: [
-      'Automation Flow',
+      '<b>Automation</b>',
       '',
-      'Automations in preview:',
-      '- Auto-follow-up after 2 hours',
+      'The workflow keeps moving without chasing every update manually:',
+      '- Follow-up after 2 hours',
       '- Task reminders',
       '- Status notifications'
     ].join('\n'),
     pricing: [
-      'Pricing / Packages',
+      '<b>Packages</b>',
       '',
-      'Sample packages:',
+      'Engagements are scoped around your workflow and launch priorities:',
       '- Starter: $499',
       '- Growth: $999',
-      '- Custom: Contact sales'
+      '- Custom: Private consultation'
     ].join('\n'),
-    contact: 'Contact Angelinix for a custom walkthrough.'
+    contact: 'Tell us what you want to automate. Angelinix will map the workflow, recommend the fastest path, and show what can be launched first.'
+  },
+  contactButtons: {
+    telegram: '📩 Message Angelinix',
+    whatsapp: '💬 WhatsApp',
+    landing: '🌐 View Website'
   },
   languageChanged: 'Language set to English.'
 };
