@@ -237,6 +237,11 @@ function setupBotHandlers(bot) {
     await sendSection(ctx, 'integrations');
   });
 
+  bot.action('section:results', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendSection(ctx, 'results');
+  });
+
   bot.action('section:contact', async (ctx) => {
     await ctx.answerCbQuery();
     const language = ctx.session.language || config.DEFAULT_LANGUAGE;

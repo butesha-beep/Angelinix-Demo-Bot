@@ -16,6 +16,7 @@ module.exports = {
     capabilities: '⚡️ Capabilities',
     useCases: '🏢 Use Cases',
     integrations: '🔗 Integrations',
+    results: '🏆 Business Results',
     dashboard: '📊 Dashboard',
     clients: '👥 Clients',
     projects: '🗂 Projects',
@@ -220,6 +221,23 @@ module.exports = {
       '• Email Systems',
       '',
       'Instead of managing disconnected tools manually, your team gets one connected process for leads, orders, updates, and reporting.'
+    ].join('\n'),
+    results: [
+      '🏆 Business Results',
+      '',
+      'After implementation, businesses typically gain:',
+      '',
+      '⏳ Less manual work',
+      '📋 All customer requests in one place',
+      '🔔 Automated reminders and follow-ups',
+      '💰 Better control over orders and payments',
+      '📈 More repeat sales',
+      '📊 Clear business analytics',
+      '👥 Centralized customer database',
+      '🚀 Easier growth without operational chaos',
+      '',
+      'The goal is not more software.',
+      'The goal is a smoother business operation.'
     ].join('\n'),
     contact: 'Tell us what you want to automate. Angelinix will map the workflow, recommend the fastest path, and show what can be launched first.'
   },

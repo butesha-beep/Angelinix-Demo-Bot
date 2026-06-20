@@ -10,6 +10,7 @@ function getMainKeyboard(messages) {
     [Markup.button.callback(messages.menu.capabilities, 'section:capabilities')],
     [Markup.button.callback(messages.menu.useCases, 'section:use_cases')],
     [Markup.button.callback(messages.menu.integrations, 'section:integrations')],
+    [Markup.button.callback(messages.menu.results, 'section:results')],
     [Markup.button.callback(messages.menu.pricing, 'section:pricing')],
     [Markup.button.callback(messages.menu.contact, 'section:contact')],
     [Markup.button.callback(messages.menu.language, 'language:toggle')]
