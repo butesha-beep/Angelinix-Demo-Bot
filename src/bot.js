@@ -2,7 +2,6 @@ const path = require('path');
 const { Telegraf, session, Input } = require('telegraf');
 const config = require('./config');
 const { getMainKeyboard, getContactKeyboard, getLanguageKeyboard, getBackKeyboard } = require('./keyboards');
-const { getDemoSteps } = require('./demo-flow');
 
 const demoScreenshots = {
   dashboard: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-dashboard.jpg'),
@@ -62,6 +61,28 @@ async function sendSection(ctx, section) {
   });
 }
 
+async function sendAngelinixMasterSection(ctx) {
+  const language = ctx.session.language || config.DEFAULT_LANGUAGE;
+  const messages = getMessages(language);
+
+  await ctx.reply(messages.angelinixMaster.intro, {
+    parse_mode: 'HTML'
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dashboard), {
+    caption: messages.demo.screenshots.dashboard
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.clients), {
+    caption: messages.demo.screenshots.clients
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.analytics), {
+    caption: messages.demo.screenshots.analytics
+  });
+  await ctx.reply(messages.angelinixMaster.summary, {
+    parse_mode: 'HTML',
+    ...getBackKeyboard(messages)
+  });
+}
+
 async function sendDealMarketAdminSection(ctx) {
   const language = ctx.session.language || config.DEFAULT_LANGUAGE;
   const messages = getMessages(language);
@@ -84,44 +105,42 @@ async function sendDealMarketAdminSection(ctx) {
   });
 }
 
-async function runDemoFlow(ctx) {
+async function sendDealMarketBotSection(ctx) {
   const language = ctx.session.language || config.DEFAULT_LANGUAGE;
   const messages = getMessages(language);
-  const steps = getDemoSteps(messages);
 
-  await ctx.reply(messages.demo.intro);
-
-  await ctx.reply(steps[0]);
-  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dashboard), {
-    caption: messages.demo.screenshots.dashboard
-  });
-
-  await ctx.reply(steps[1]);
-  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.clients), {
-    caption: messages.demo.screenshots.clients
-  });
-
-  await ctx.reply(steps[2]);
-  await ctx.reply(steps[3]);
-  await ctx.reply(steps[4]);
-  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.analytics), {
-    caption: messages.demo.screenshots.analytics
-  });
-
-  await ctx.reply(messages.demo.dealMarketBot.intro, {
+  await ctx.reply(messages.dealMarketBot.intro, {
     parse_mode: 'HTML'
   });
   await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.home), {
-    caption: messages.demo.dealMarketBot.screenshots.home
+    caption: messages.dealMarketBot.screenshots.home
   });
   await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.product), {
-    caption: messages.demo.dealMarketBot.screenshots.product
+    caption: messages.dealMarketBot.screenshots.product
   });
   await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.cart), {
-    caption: messages.demo.dealMarketBot.screenshots.cart
+    caption: messages.dealMarketBot.screenshots.cart
   });
-  await ctx.reply(messages.demo.dealMarketBot.summary, {
-    parse_mode: 'HTML'
+  await ctx.reply(messages.dealMarketBot.summary, {
+    parse_mode: 'HTML',
+    ...getBackKeyboard(messages)
+  });
+}
+
+async function runDemoFlow(ctx) {
+  const language = ctx.session.language || config.DEFAULT_LANGUAGE;
+  const messages = getMessages(language);
+
+  await ctx.reply(messages.demo.intro);
+
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dashboard), {
+    caption: messages.demo.tour.angelinixMaster
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketAdmin.dashboard), {
+    caption: messages.demo.tour.dealMarketAdmin
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.home), {
+    caption: messages.demo.tour.dealMarketBot
   });
 
   await ctx.reply(messages.demo.final, {
@@ -158,6 +177,11 @@ function setupBotHandlers(bot) {
     await runDemoFlow(ctx);
   });
 
+  bot.action('section:angelinix_master', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendAngelinixMasterSection(ctx);
+  });
+
   bot.action('section:dashboard', async (ctx) => {
     await ctx.answerCbQuery();
     await sendSection(ctx, 'dashboard');
@@ -191,6 +215,11 @@ function setupBotHandlers(bot) {
   bot.action('section:deal_market_admin', async (ctx) => {
     await ctx.answerCbQuery();
     await sendDealMarketAdminSection(ctx);
+  });
+
+  bot.action('section:deal_market_bot', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendDealMarketBotSection(ctx);
   });
 
   bot.action('section:contact', async (ctx) => {

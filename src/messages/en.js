@@ -10,7 +10,9 @@ module.exports = {
   ].join('\n'),
   menu: {
     demo: '▶️ Start Preview',
+    angelinixMaster: '🧠 Angelinix Master',
     dealMarketAdmin: '🛒 Deal Market Admin',
+    dealMarketBot: '🤖 Deal Market Bot',
     dashboard: '📊 Dashboard',
     clients: '👥 Clients',
     projects: '🗂 Projects',
@@ -22,7 +24,7 @@ module.exports = {
     back: '⬅️ Menu'
   },
   demo: {
-    intro: 'Here is the Angelinix Master preview flow:',
+    intro: 'Here is a compact Angelinix preview across operations, admin control, and buyer automation.',
     step1: '1. A new inquiry arrives and is ready for follow-up.',
     step2: '2. The client profile is organized with the key context your team needs.',
     step3: '3. A project workspace is prepared with ownership, status, and next steps.',
@@ -33,24 +35,41 @@ module.exports = {
       clients: 'Client view: clean profiles, context, and relationship history for faster handoff.',
       analytics: 'Analytics view: response, conversion, and delivery signals ready for decision-making.'
     },
-    dealMarketBot: {
-      intro: [
-        '<b>🤖 Deal Market Bot</b>',
-        '',
-        'A Telegram commerce flow for browsing deals, reviewing products, and building a cart.'
-      ].join('\n'),
-      screenshots: {
-        home: 'Home screen: featured deals, category entry points, and a clear path into the catalog.',
-        product: 'Product screen: offer details, pricing, and product actions in one focused view.',
-        cart: 'Cart screen: selected items, totals, and checkout-ready order context.'
-      },
-      summary: [
-        '<b>Summary</b>',
-        '',
-        'Deal Market Bot turns product discovery, product review, and cart building into one guided Telegram buying experience.'
-      ].join('\n')
+    tour: {
+      angelinixMaster: 'Angelinix Master: pipeline, client context, and executive signals in one operating view.',
+      dealMarketAdmin: 'Deal Market Admin: catalog, order, customer, and sales controls for the operator.',
+      dealMarketBot: 'Deal Market Bot: buyer-facing Telegram commerce from discovery into the catalog.'
     },
     final: 'Ready to see this around your real workflow? Book a private Angelinix walkthrough.'
+  },
+  angelinixMaster: {
+    intro: [
+      '<b>🧠 Angelinix Master</b>',
+      '',
+      'A guided operations layer for pipeline visibility, client context, and leadership-ready analytics.'
+    ].join('\n'),
+    summary: [
+      '<b>Summary</b>',
+      '',
+      'Angelinix Master keeps client work organized from first inquiry through handoff, delivery, and reporting.'
+    ].join('\n')
+  },
+  dealMarketBot: {
+    intro: [
+      '<b>🤖 Deal Market Bot</b>',
+      '',
+      'A Telegram commerce flow for browsing deals, reviewing products, and building a cart.'
+    ].join('\n'),
+    screenshots: {
+      home: 'Home screen: featured deals, category entry points, and a clear path into the catalog.',
+      product: 'Product screen: offer details, pricing, and product actions in one focused view.',
+      cart: 'Cart screen: selected items, totals, and checkout-ready order context.'
+    },
+    summary: [
+      '<b>Summary</b>',
+      '',
+      'Deal Market Bot turns product discovery, product review, and cart building into one guided Telegram buying experience.'
+    ].join('\n')
   },
   dealMarketAdmin: {
     intro: [

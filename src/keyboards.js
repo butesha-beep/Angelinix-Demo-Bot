@@ -4,19 +4,10 @@ const config = require('./config');
 function getMainKeyboard(messages) {
   return Markup.inlineKeyboard([
     [Markup.button.callback(messages.menu.demo, 'demo:start')],
+    [Markup.button.callback(messages.menu.angelinixMaster, 'section:angelinix_master')],
     [Markup.button.callback(messages.menu.dealMarketAdmin, 'section:deal_market_admin')],
-    [
-      Markup.button.callback(messages.menu.dashboard, 'section:dashboard'),
-      Markup.button.callback(messages.menu.clients, 'section:clients')
-    ],
-    [
-      Markup.button.callback(messages.menu.projects, 'section:projects'),
-      Markup.button.callback(messages.menu.analytics, 'section:analytics')
-    ],
-    [
-      Markup.button.callback(messages.menu.automation, 'section:automation'),
-      Markup.button.callback(messages.menu.pricing, 'section:pricing')
-    ],
+    [Markup.button.callback(messages.menu.dealMarketBot, 'section:deal_market_bot')],
+    [Markup.button.callback(messages.menu.pricing, 'section:pricing')],
     [Markup.button.callback(messages.menu.contact, 'section:contact')],
     [Markup.button.callback(messages.menu.language, 'language:toggle')]
   ]);
