@@ -4,6 +4,7 @@ const config = require('./config');
 function getMainKeyboard(messages) {
   return Markup.inlineKeyboard([
     [Markup.button.callback(messages.menu.demo, 'demo:start')],
+    [Markup.button.callback(messages.menu.dealMarketAdmin, 'section:deal_market_admin')],
     [
       Markup.button.callback(messages.menu.dashboard, 'section:dashboard'),
       Markup.button.callback(messages.menu.clients, 'section:clients')

@@ -10,6 +10,7 @@ module.exports = {
   ].join('\n'),
   menu: {
     demo: '▶️ Start Preview',
+    dealMarketAdmin: '🛒 Deal Market Admin',
     dashboard: '📊 Dashboard',
     clients: '👥 Clients',
     projects: '🗂 Projects',
@@ -50,6 +51,23 @@ module.exports = {
       ].join('\n')
     },
     final: 'Ready to see this around your real workflow? Book a private Angelinix walkthrough.'
+  },
+  dealMarketAdmin: {
+    intro: [
+      '<b>🛒 Deal Market Admin</b>',
+      '',
+      'Admin-side control room for managing the Deal Market catalog, orders, customer activity, and sales signals.'
+    ].join('\n'),
+    screenshots: {
+      dashboard: 'Admin dashboard: quick access to orders, catalog, categories, clients, and priority counters.',
+      funnelOrders: 'Orders and funnel: revenue totals, order statuses, and today’s conversion steps in one operational view.',
+      salesAnalytics: 'Sales analytics: top products, slow movers, best clients, and repeat buyers for merchandising decisions.'
+    },
+    summary: [
+      '<b>Summary</b>',
+      '',
+      'Deal Market Admin gives operators one place to monitor store health, handle orders, and read sales signals while Deal Market Bot handles the buyer flow.'
+    ].join('\n')
   },
   sections: {
     dashboard: [

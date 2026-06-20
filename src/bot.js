@@ -12,6 +12,11 @@ const demoScreenshots = {
     home: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-home.jpg'),
     product: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-product.jpg'),
     cart: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-cart.jpg')
+  },
+  dealMarketAdmin: {
+    dashboard: path.join(__dirname, 'assets', 'screenshots', 'deal-market-dashboard.jpg'),
+    funnelOrders: path.join(__dirname, 'assets', 'screenshots', 'deal-market-funnel-orders.jpg'),
+    salesAnalytics: path.join(__dirname, 'assets', 'screenshots', 'deal-market-sales-analytics.jpg')
   }
 };
 
@@ -52,6 +57,28 @@ async function sendSection(ctx, section) {
   }
 
   await ctx.reply(sectionText, {
+    parse_mode: 'HTML',
+    ...getBackKeyboard(messages)
+  });
+}
+
+async function sendDealMarketAdminSection(ctx) {
+  const language = ctx.session.language || config.DEFAULT_LANGUAGE;
+  const messages = getMessages(language);
+
+  await ctx.reply(messages.dealMarketAdmin.intro, {
+    parse_mode: 'HTML'
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketAdmin.dashboard), {
+    caption: messages.dealMarketAdmin.screenshots.dashboard
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketAdmin.funnelOrders), {
+    caption: messages.dealMarketAdmin.screenshots.funnelOrders
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketAdmin.salesAnalytics), {
+    caption: messages.dealMarketAdmin.screenshots.salesAnalytics
+  });
+  await ctx.reply(messages.dealMarketAdmin.summary, {
     parse_mode: 'HTML',
     ...getBackKeyboard(messages)
   });
@@ -159,6 +186,11 @@ function setupBotHandlers(bot) {
   bot.action('section:pricing', async (ctx) => {
     await ctx.answerCbQuery();
     await sendSection(ctx, 'pricing');
+  });
+
+  bot.action('section:deal_market_admin', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendDealMarketAdminSection(ctx);
   });
 
   bot.action('section:contact', async (ctx) => {
