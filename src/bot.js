@@ -144,7 +144,7 @@ async function runDemoFlow(ctx) {
   });
 
   await ctx.reply(messages.demo.final, {
-    ...getContactKeyboard(messages)
+    ...getContactKeyboard(messages, { includeMenu: true })
   });
 }
 

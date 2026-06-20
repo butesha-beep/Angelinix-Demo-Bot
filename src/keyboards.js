@@ -29,12 +29,16 @@ function getLanguageKeyboard() {
   ]);
 }
 
-function getContactKeyboard(messages) {
+function getContactKeyboard(messages, options = {}) {
   const keyboard = [
     [Markup.button.url(messages.contactButtons.telegram, config.CONTACT_TELEGRAM_URL)],
     [Markup.button.url(messages.contactButtons.whatsapp, config.CONTACT_WHATSAPP_URL)],
     [Markup.button.url(messages.contactButtons.landing, config.LANDING_URL)]
   ];
+
+  if (options.includeMenu) {
+    keyboard.push([Markup.button.callback(messages.menu.back, 'main_menu')]);
+  }
 
   return Markup.inlineKeyboard(keyboard);
 }
