@@ -13,6 +13,7 @@ module.exports = {
     angelinixMaster: '🧠 Angelinix Master',
     dealMarketAdmin: '🛒 Deal Market Admin',
     dealMarketBot: '🤖 Deal Market Bot',
+    capabilities: '⚡️ Capabilities',
     dashboard: '📊 Dashboard',
     clients: '👥 Clients',
     projects: '🗂 Projects',
@@ -136,6 +137,25 @@ module.exports = {
       '- Starter: $499',
       '- Growth: $999',
       '- Custom: Private consultation'
+    ].join('\n'),
+    capabilities: [
+      '<b>⚡️ Capabilities</b>',
+      '',
+      'Angelinix builds practical systems that connect customer acquisition, operations, sales, and follow-up:',
+      '',
+      '• CRM: lead tracking, client records, pipeline stages, and handoff history.',
+      '• Analytics: dashboards for traffic, sales, conversion, performance, and customer activity.',
+      '• Broadcasts: Telegram, WhatsApp, or channel campaigns for offers, updates, and reactivation.',
+      '• Reminders: follow-ups, task alerts, payment reminders, booking reminders, and status notifications.',
+      '• Telegram Bots: storefronts, lead intake, booking flows, support flows, carts, and client portals.',
+      '• Admin Dashboards: order control, catalog management, client management, reports, and team workflows.',
+      '• Websites: business websites, service pages, catalog sites, and client-facing portals.',
+      '• Landing Pages: offer pages, lead capture, campaign pages, and booking pages.',
+      '• Payment Systems: checkout flows, payment status tracking, invoice support, and order confirmation.',
+      '• Integrations: Telegram, WhatsApp, websites, forms, spreadsheets, CRM tools, analytics, and payment providers.',
+      '• AI Automation: message drafting, lead qualification, summaries, routing, content support, and workflow assistants.',
+      '',
+      'The goal is not more software. The goal is a cleaner business flow from first contact to completed order.'
     ].join('\n'),
     contact: 'Tell us what you want to automate. Angelinix will map the workflow, recommend the fastest path, and show what can be launched first.'
   },

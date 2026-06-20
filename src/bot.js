@@ -222,6 +222,11 @@ function setupBotHandlers(bot) {
     await sendDealMarketBotSection(ctx);
   });
 
+  bot.action('section:capabilities', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendSection(ctx, 'capabilities');
+  });
+
   bot.action('section:contact', async (ctx) => {
     await ctx.answerCbQuery();
     const language = ctx.session.language || config.DEFAULT_LANGUAGE;
