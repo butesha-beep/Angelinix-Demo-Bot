@@ -227,6 +227,16 @@ function setupBotHandlers(bot) {
     await sendSection(ctx, 'capabilities');
   });
 
+  bot.action('section:use_cases', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendSection(ctx, 'useCases');
+  });
+
+  bot.action('section:integrations', async (ctx) => {
+    await ctx.answerCbQuery();
+    await sendSection(ctx, 'integrations');
+  });
+
   bot.action('section:contact', async (ctx) => {
     await ctx.answerCbQuery();
     const language = ctx.session.language || config.DEFAULT_LANGUAGE;

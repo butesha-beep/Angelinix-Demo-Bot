@@ -8,6 +8,8 @@ function getMainKeyboard(messages) {
     [Markup.button.callback(messages.menu.dealMarketAdmin, 'section:deal_market_admin')],
     [Markup.button.callback(messages.menu.dealMarketBot, 'section:deal_market_bot')],
     [Markup.button.callback(messages.menu.capabilities, 'section:capabilities')],
+    [Markup.button.callback(messages.menu.useCases, 'section:use_cases')],
+    [Markup.button.callback(messages.menu.integrations, 'section:integrations')],
     [Markup.button.callback(messages.menu.pricing, 'section:pricing')],
     [Markup.button.callback(messages.menu.contact, 'section:contact')],
     [Markup.button.callback(messages.menu.language, 'language:toggle')]
