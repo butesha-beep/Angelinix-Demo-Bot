@@ -32,6 +32,23 @@ module.exports = {
       clients: 'Client view: clean profiles, context, and relationship history for faster handoff.',
       analytics: 'Analytics view: response, conversion, and delivery signals ready for decision-making.'
     },
+    dealMarketBot: {
+      intro: [
+        '<b>🤖 Deal Market Bot</b>',
+        '',
+        'A Telegram commerce flow for browsing deals, reviewing products, and building a cart.'
+      ].join('\n'),
+      screenshots: {
+        home: 'Home screen: featured deals, category entry points, and a clear path into the catalog.',
+        product: 'Product screen: offer details, pricing, and product actions in one focused view.',
+        cart: 'Cart screen: selected items, totals, and checkout-ready order context.'
+      },
+      summary: [
+        '<b>Summary</b>',
+        '',
+        'Deal Market Bot turns product discovery, product review, and cart building into one guided Telegram buying experience.'
+      ].join('\n')
+    },
     final: 'Ready to see this around your real workflow? Book a private Angelinix walkthrough.'
   },
   sections: {

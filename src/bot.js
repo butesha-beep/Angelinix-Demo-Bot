@@ -7,7 +7,12 @@ const { getDemoSteps } = require('./demo-flow');
 const demoScreenshots = {
   dashboard: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-dashboard.jpg'),
   clients: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-clients.jpg'),
-  analytics: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-analytics.jpg')
+  analytics: path.join(__dirname, 'assets', 'screenshots', 'angelinix-master-analytics.jpg'),
+  dealMarketBot: {
+    home: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-home.jpg'),
+    product: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-product.jpg'),
+    cart: path.join(__dirname, 'assets', 'screenshots', 'deal-market-bot-cart.jpg')
+  }
 };
 
 function getMessages(language = config.DEFAULT_LANGUAGE) {
@@ -74,6 +79,22 @@ async function runDemoFlow(ctx) {
   await ctx.reply(steps[4]);
   await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.analytics), {
     caption: messages.demo.screenshots.analytics
+  });
+
+  await ctx.reply(messages.demo.dealMarketBot.intro, {
+    parse_mode: 'HTML'
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.home), {
+    caption: messages.demo.dealMarketBot.screenshots.home
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.product), {
+    caption: messages.demo.dealMarketBot.screenshots.product
+  });
+  await ctx.replyWithPhoto(Input.fromLocalFile(demoScreenshots.dealMarketBot.cart), {
+    caption: messages.demo.dealMarketBot.screenshots.cart
+  });
+  await ctx.reply(messages.demo.dealMarketBot.summary, {
+    parse_mode: 'HTML'
   });
 
   await ctx.reply(messages.demo.final, {
